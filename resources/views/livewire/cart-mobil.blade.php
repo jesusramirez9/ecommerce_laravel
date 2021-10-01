@@ -1,7 +1,8 @@
 <div>
-    <a class="py-2 px-4 text-sm flex items-center text-trueGray-500 hover:bg-orange-500 hover:text-white" href="">
+    <a class="py-2  px-4 text-sm flex items-center text-trueGray-500 hover:bg-orange-500 hover:text-white" href="">
         <span class="flex justify-center w-9">
             <i class="fas fa-shopping-cart"></i>
+            
         </span>
         <span class="relative inline-block pr-4">
             Carrito de compras

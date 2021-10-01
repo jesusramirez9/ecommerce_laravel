@@ -46,7 +46,7 @@
     </div>
     {{-- Slug --}}
     <div class="mb-4">
-        <x-jet-label value="Slug" />
+        <x-jet-label value="Slug - Esto ayudara a indexar mas rápido a los navegadores" />
         <x-jet-input type="text" wire:model="slug" class="w-full bg-gray-200" placeholder="Ingrese el Slug del producto"
             disabled />
         <x-jet-input-error for="slug" />
@@ -72,6 +72,25 @@
         } );" x-ref="miEditor"></textarea>
         </div>
         <x-jet-input-error for="description" />
+
+    </div>
+    <div class="mb-4" >
+        <div wire:ignore>
+            <x-jet-label value="Especificación" />
+            <textarea wire:model="specification"
+                class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                cols="30" rows="5" x-data x-init="
+        ClassicEditor.create( $refs.miEditor )
+        .then(function(editor){
+            editor.model.document.on('change:data',() => {
+                @this.set('specification', editor.getData())
+            })
+        })
+        .catch( error => {
+            console.error( error );
+        } );" x-ref="miEditor"></textarea>
+        </div>
+        <x-jet-input-error for="specification" />
 
     </div>
 

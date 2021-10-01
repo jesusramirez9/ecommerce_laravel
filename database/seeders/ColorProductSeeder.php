@@ -36,7 +36,10 @@ class ColorProductSeeder extends Seeder
                 ],
                 4 =>[
                     'quantity' =>10
-                ] 
+                ],
+                5 => [
+                    'quantity' =>10
+                ]
             ]);
         }
     }

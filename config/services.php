@@ -36,6 +36,10 @@ return [
     'paypal' =>[
         'client_id' => env('PAYPAL_CLIENT_ID'),
         'secret' => env('PAYPAL_SECRET'),
+    ],
+    'izipay'=>[
+        'key'=>env('IZIPAY_PUBLIC_KEY'),
+        'token'=>env('IZIPAY_ACCESS_TOKEN'),
     ]
 
 ];

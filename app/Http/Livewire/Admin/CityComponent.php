@@ -19,12 +19,12 @@ class CityComponent extends Component
 
     public $editForm = [
         'open' => false,
-        'name' => " ",
+        'name' => '',
  
     ];
 
     protected $validationAttributes = [
-        'createForm.name' => 'nombre'
+        'createForm.name' => 'nombre',
     ];
   
     public function mount(City $city){
@@ -51,7 +51,7 @@ class CityComponent extends Component
     }
 
     public function edit(District $district){
-        $this->$district = $district;
+        $this->district = $district;
         $this->editForm['open'] = true;
         $this->editForm['name'] = $district->name;
 

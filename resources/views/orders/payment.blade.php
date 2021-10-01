@@ -38,16 +38,16 @@
         $preference->save();
     @endphp --}}
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-6 container py-8">
+    <div class="grid grid-cols-1 mt-14 lg:grid-cols-2 xl:grid-cols-5 gap-6 container py-8">
         <div class="order-2 lg:order-1 xl:col-span-3 ">
             <div class="bg-white rounded-lg shadow-lg px-6 py-4 mb-6">
-                <p class="text-gray-700 uppercase"> <span class="font-semibold">Número de orden:</span>
+                <p class=" uppercase"> <span class="colorverderr font-bold">Número de orden:</span>
                     Orden-{{ $order->id }}</p>
             </div>
             <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                <div class="grid grid-cols-2 gap-6 text-gray-700">
+                <div class="grid grid-cols-2 gap-6 ">
                     <div>
-                        <p class="text-lg font-semibold uppercase">Envío</p>
+                        <p class="text-lg colorverderr font-bold uppercase">Envío</p>
                         @if ($order->envio_type == 1)
                             <p class="text-sm">Los productos deben ser recogidos en tienda</p>
                             <p class="text-sm">Calle falsa 123</p>
@@ -102,13 +102,13 @@
                                     </div>
                                 </td>
                                 <td class="text-center">
-                                    {{ $item->price }} USD
+                                   S/ {{ $item->price }} 
                                 </td>
                                 <td class="text-center">
                                     {{ $item->qty }}
                                 </td>
                                 <td class="text-center">
-                                    {{ $item->price * $item->qty }} USD
+                                   S/ {{ $item->price * $item->qty }}
                                 </td>
                             </tr>
                         @endforeach
@@ -129,13 +129,13 @@
                     </div>
                     <div class="text-gray-700">
                         <p class=" text-sm font-semibold ">
-                            Subotal: {{ $order->total - $order->shipping_cost }} USD
+                             Subotal: S/ {{ $order->total - $order->shipping_cost }} 
                         </p>
                         <p class=" text-sm font-semibold ">
-                            Envio: {{ $order->shipping_cost }} USD
+                            Envio: S/ {{ $order->shipping_cost }} 
                         </p>
                         <p class="text-lg font-semibold uppercase">
-                            Total: {{ $order->total }} USD
+                            Total: S/ {{ $order->total }} 
                         </p>
 
                         {{-- <div class="cho-container">
@@ -143,8 +143,8 @@
 
                     </div>
                 </div>
-
-                <div id="paypal-button-container"></div>
+              
+                {{-- <div id="paypal-button-container"></div> --}}
             </div>
 
         </div>
@@ -172,7 +172,7 @@
         });
     </script> --}}
 
-    <script src="https://www.paypal.com/sdk/js?client-id={{ config('services.paypal.client_id') }}"></script>
+    {{-- <script src="https://www.paypal.com/sdk/js?client-id={{ config('services.paypal.client_id') }}"></script>
     <script>
         paypal.Buttons({
             createOrder: function(data, actions) {
@@ -191,5 +191,5 @@
                 });
             }
         }).render('#paypal-button-container'); // Display payment options on your web page
-    </script>
+    </script> --}}
 </x-app-layout>

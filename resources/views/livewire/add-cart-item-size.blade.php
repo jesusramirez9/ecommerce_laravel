@@ -1,26 +1,72 @@
 <div x-data>
     <div class="text-xl text-gray-700">
-        <p>Talla:</p>
-        <select wire:model="size_id"
+        <p class="sizecol mb-4">Elige tu talla:  </p>
+        <div wire:model="size_id" class="divsize">
+            @foreach ($sizes as $size)
+                {{-- <input type="radio" name="size" id="{{ $size->name }}" value="{{ $size->id }}" />
+                <label for="{{ $size->name }}">{{ $size->name }} </label> --}}
+              
+
+                <div class="btn-group" role="group">
+                    <input type="radio" class="btn-check" value="{{ $size->id }}" name="size" id="{{ $size->name }}"
+                        autocomplete="off" >
+                    <label class="btn btn-outline-primary mr-3 btn_talla" for="{{ $size->name }}"
+                        >{{ $size->name }}</label>
+                </div>
+
+            @endforeach
+        </div>
+        
+        {{-- <select wire:model="size_id"
             class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
             <option value="" selected disabled>Seleccione una talla</option>
             @foreach ($sizes as $size)
                 <option value="{{ $size->id }}">{{ $size->name }}</option>
             @endforeach
-        </select>
+        </select> --}}
+
     </div>
 
-    <div class="text-xl text-gray-700 mt-2">
-        <p>Color:</p>
-        <select wire:model="color_id"
+    <div class="text-xl text-gray-700 mt-4">
+        <p class="sizecol mt-8 mb-4">Elige tu color:</p>
+
+        <div wire:model="color_id" class="divsize">
+            {{-- @foreach ($colors as $color)
+
+              <option class="capitalize" value="{{ $color->id }}">{{ __($color->name) }}</option> 
+
+                <div class="btn-group" role="group">
+                    <input type="radio" class="btn-check" value="{{ $color->id }}" name="color" id="{{ __($color->name) }}"
+                        autocomplete="off" checked>
+                    <label class="btn btn-outline-primary mr-3 btn_talla" for="{{ __($color->name) }}"
+                        >{{ __($color->name) }}</label>
+                </div>
+
+            @endforeach --}}
+            @forelse ($colors as $color)    
+            <div class="btn-group" role="group">
+                <input type="radio" class="btn-check" value="{{ $color->id }}" name="color" id="{{ __($color->name) }}"
+                    autocomplete="off" >
+                <label class="btn btn-outline-primary mr-3 btn_talla btn_color" for="{{ __($color->name) }}"
+                  style="background-color: {{ $color->name }}"  ></label>
+            </div>
+            @empty
+                <p class="text-sm">Elige una talla para elegir un color</p>
+            @endforelse
+
+            {{-- <span><a class="ml-4 underline font-bold cursor-pointer colorbrown">Tabla de tallas</a></span> --}}
+        </div>
+
+        {{-- <select wire:model="color_id"
             class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
             <option value="" selected disabled>Seleccione un color</option>
             @foreach ($colors as $color)
                 <option class="capitalize" value="{{ $color->id }}">{{ __($color->name) }}</option>
             @endforeach
-        </select>
+        </select> --}}
+      
     </div>
-
+    <hr class="mt-8 mb-4 hrgreen">
     <p class="text-gray-700 my-4"> <span class="text-lg font-semibold">Stock disponible: </span>
         @if ($quantity)
             {{ $quantity }}
@@ -30,22 +76,46 @@
     </p>
 
     <div class="flex ">
-        <div class="mr-4">
-            <x-jet-secondary-button disabled x-bind:disabled="$wire.qty <= 1" wire:loading.attr="disabled"
-                wire:target="decrement" wire:click="decrement">
+        <div class="mr-4 bordradiu">
+            <x-jet-secondary-button class="btn_menmas" disabled x-bind:disabled="$wire.qty <= 1"
+                wire:loading.attr="disabled" wire:target="decrement" wire:click="decrement">
                 -
             </x-jet-secondary-button>
-            <span class="mx-2 text-gray-700">{{ $qty }}</span>
-            <x-jet-secondary-button x-bind:disabled="$wire.qty >= $wire.quantity" wire:loading.attr="disabled"
-                wire:target="increment" wire:click="increment">
+            <span class="mx-2 text-gray-700 qtydad">{{ $qty }}</span>
+            <x-jet-secondary-button class="btn_menmas" x-bind:disabled="$wire.qty >= $wire.quantity"
+                wire:loading.attr="disabled" wire:target="increment" wire:click="increment">
                 +
             </x-jet-secondary-button>
         </div>
         <div class="flex-1">
-            <x-button x-bind:disabled="!$wire.quantity" x-bind:disabled="$wire.qty > $wire.quantity"
-                wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem" color="orange" class="w-full">
-                Agregar al carrito de compras
-            </x-button>
+
+            <div class="itemcolbtnweb">
+                <x-button x-bind:disabled="!$wire.quantity" x-bind:disabled="$wire.qty > $wire.quantity"
+                    wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem" color="orange"
+                    class="w-full">
+                    Agregar a la bolsa
+                </x-button>
+            </div>
+            <div class="itemcolorbtn">
+                <x-button x-bind:disabled="!$wire.quantity" x-bind:disabled="$wire.qty > $wire.quantity"
+                    wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem" color="orange"
+                    class="w-full">
+                    Agregar
+                </x-button>
+            </div>
+           
+
+
+
+            {{-- <button x-bind:disabled="!$wire.quantity" x-bind:disabled="$wire.qty > $wire.quantity"
+                wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem" color="orange" type="button" class="btn_grupe w-full divide-x divide-gray-700">
+                <span class="button__img">
+                    <img src="{{asset('images/catalogoproductos/3.png')}}" class=" "  alt="">
+                </span>
+                <span class="button__text">
+                    Agregar a la bolsa
+                </span>
+            </button> --}}
         </div>
     </div>
 </div>

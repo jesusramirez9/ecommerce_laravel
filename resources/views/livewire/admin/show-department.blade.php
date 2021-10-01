@@ -126,22 +126,22 @@
         <script>
             livewire.on('deleteCity', cityId => {
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: '¿Estás seguro?',
+                    text: "¡No podrás revertir esto!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: '¡Sí, bórralo!'
                 }).then((result) => {
                     if (result.isConfirmed) {
 
                         Livewire.emitTo('admin.show-department', 'delete', cityId);
 
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
+                            'Eliminado!',
+                            'Ha sido eliminado con éxito.',
+                            'Éxito'
                         )
                     }
                 })

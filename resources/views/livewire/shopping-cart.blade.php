@@ -1,36 +1,36 @@
-<div class="container py-8">
+<div class="container mt-14 py-8">
 
     <x-table-responsive>
-        <div class="px-6 py-4 bg-white">
-            <h1 class="text-lg font-semibold text-gray-700 ">CARRO DE COMPRAS</h1>
+        <div class="px-6 pb-4 pt-12 lg:py-4 text-center mt-8 md:mt-0 bg-white">
+            <h1 class="text-2xl lg:text-4xl font-bold link_vrd ">Bolsa de compras</h1>
         </div>
 
         @if (Cart::count())
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+            <table class="min-w-full brdever_tble divide-y divide-green-900">
+                <thead class="bg-gray-50 brdever_tble">
                     <tr>
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Nombre
+                            class="px-6 py-3 text-left text-xs font-bold colorverderr uppercase tracking-wider">
+                            Producto
                         </th>
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            class="px-6 py-3 text-left text-xs font-bold colorverderr uppercase tracking-wider">
                             Precio
                         </th>
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            class="px-6 py-3 text-left text-xs font-bold colorverderr uppercase tracking-wider">
                             Cantidad
                         </th>
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Total
+                            class="px-6 py-3 text-left text-xs font-bold colorverderr uppercase tracking-wider">
+                            Subtotal
                         </th>
 
                     </tr>
                 </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
+                <tbody class="bg-white divide-y divide-green-900 brdever_tble">
                     @foreach (Cart::content() as $item)
-                        <tr>
+                        <tr >
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 h-10 w-10">
@@ -38,7 +38,7 @@
                                             src="{{ $item->options->image }}" alt="">
                                     </div>
                                     <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900">
+                                        <div class="text-sm  colorbroywm font-bold">
                                             {{ $item->name }}
                                         </div>
                                         <div class="text-sm text-gray-500">
@@ -57,13 +57,13 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                
-                                <div class="text-sm text-gray-500"><span>USD {{ $item->price }}</span>
+                                <div class="text-sm colorbroywm font-bold"><span>S/ {{ $item->price }}</span>
                                     <a class="ml-6 cursor-pointer hover:text-red-600" wire:click="delete('{{$item->rowId}}')" wire:loading.class="text-red-600 opacity-600" wire:target="delete('{{$item->rowId}}')">
                                         <i class="fas fa-trash"></i>
                                     </a></div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-500">
+                                <div class="text-sm colorbroywm font-bold">
                                     @if ($item->options->size)
                                     @livewire('update-cart-size', ['rowId' => $item->rowId], key($item->rowId))
                                 @elseif($item->options->color)
@@ -72,55 +72,16 @@
                                     @livewire('update-cart-item', ['rowId' => $item->rowId], key($item->rowId))
                                 @endif
                                 </div>
-
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <div class="text-sm text-gray-500">
-                                    USD {{ $item->price * $item->qty }}
+                            <td class="px-6 py-4 whitespace-nowrap text-sm colorbroywm font-bold">
+                                <div class="text-sm  colorbroywm font-bold">
+                                    S/ {{ $item->price * $item->qty }}
                                 </div>
                                
                             </td>
 
                         </tr>
-                        {{-- <tr>
-                        <td>
-                            <div class="flex">
-                                <img class="h-15 w-20 object-cover mr-4" src="{{ $item->options->image }}" alt="">
-                                <div>
-                                    <p class="font-bold">{{ $item->name }}</p>
-                                    @if ($item->options->color)
-                                        <span class="capitalize">
-                                            - Color:{{ __($item->options->color) }}
-                                        </span>
-                                    @endif
-                                    @if ($item->options->size)
-                                        <span class="mx-1"> - </span>
-                                        <span> {{ $item->options->size }}</span>
-                                    @endif
-                                </div>
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            <span>USD {{ $item->price }}</span>
-                            <a class="ml-6 cursor-pointer hover:text-red-600" wire:click="delete('{{$item->rowId}}')" wire:loading.class="text-red-600 opacity-600" wire:target="delete('{{$item->rowId}}')">
-                                <i class="fas fa-trash"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <div class="flex justify-center">                        
-                                @if ($item->options->size)
-                                    @livewire('update-cart-size', ['rowId' => $item->rowId], key($item->rowId))
-                                @elseif($item->options->color)
-                                    @livewire('update-cart-color', ['rowId' => $item->rowId], key($item->rowId))
-                                @else
-                                    @livewire('update-cart-item', ['rowId' => $item->rowId], key($item->rowId))
-                                @endif
-                            </div>
-                        </td>
-                        <td class="text-center">
-                            USD {{ $item->price * $item->qty }}
-                        </td>
-                    </tr> --}}
+                        
                     @endforeach
                 </tbody>
             </table>
@@ -131,9 +92,9 @@
                 </a>
             </div>
         @else
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center mt-2 md:mt-0">
                 <x-cart></x-cart>
-                <p class="text-lg text-gray-700 mt-4">TU CARRO DE COMPRAS ESTÁ VACÍO</p>
+                <p class="lg:text-lg text-gray-700 mt-4">TU BOLSA DE COMPRAS ESTÁ VACÍO</p>
                 <x-button-enlace href="/" class="mt-4 bg-yellow-600 px-16">
                     Ir al inicio
                 </x-button-enlace>
@@ -151,7 +112,7 @@
                 <div>
                     <p class="text-gray-700">
                         <span class="font-bold text-lg">Total:</span>
-                        USD {{ Cart::subTotal() }}
+                        S/ {{ Cart::subTotal() }}
                     </p>
                 </div>
                 <div>

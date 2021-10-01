@@ -10,7 +10,7 @@ class Category extends Model
 
     protected $fillable = ['name','slug','image','icon'];
 
-    // relacion uno a mychos
+    // relacion uno a muchos
     public function subcategories(){
         return $this->hasMany(Subcategory::class);
     }

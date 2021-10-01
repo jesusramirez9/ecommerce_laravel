@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container py-12">
+    <div class="container mt-14 pt-32 md:pt-12 pb-12 py-12">
         <section class="grid lg:grid-cols-5 gap-6 text-white">
             <a href="{{route('orders.index') . "?status=1"}}" class="bg-red-500 bg-opacity-75 rounded-lg px-12 pt-8 pb-4">
                 <p class="text-center text-2xl">
@@ -14,7 +14,7 @@
                 <p class="text-center text-2xl">
                     {{ $recibido }}
                 </p>
-                <p class="uppercase text-center">Recibido</p>
+                <p class="uppercase text-center">Comprado</p>
                 <p class="text-center text-2xl mt-2">
                     <i class="fas fa-credit-card"></i>
                 </p>
@@ -23,7 +23,7 @@
                 <p class="text-center text-2xl">
                     {{ $enviado }}
                 </p>
-                <p class="uppercase text-center">Enviado</p>
+                <p class="uppercase text-center">En curso</p>
                 <p class="text-center text-2xl mt-2">
                     <i class="fas fa-truck"></i>
                 </p>
@@ -49,8 +49,8 @@
         </section>
 
         @if ($orders->count())
-        <section class="bg-white  rounded-lg px-12 shadow-lg py-8 mt-12 text-gray-700">
-            <h1 class="text-2xl mb-4">Pedidos recientes</h1>
+        <section class="bg-white  rounded-lg px-0 md:px-12 shadow-lg py-8 mt-12 text-gray-700">
+            <h1 class="text-center md:text-left text-2xl mb-4">Pedidos recientes</h1>
 
             <ul>
                 @foreach ($orders as $order)
@@ -83,7 +83,7 @@
                                 <br>
                                 {{$order->created_at->format('d/m/Y')}}
                             </span>
-                            <div class="ml-auto ">
+                            <div class="ml-auto text-center ">
                                 <span class="font-bold">
                                     @switch($order->status)
                                         @case(1)
@@ -107,7 +107,7 @@
                                     @endswitch
                                 </span>
                                 <span class="text-sm">
-                                    {{$order->total}} USD
+                                   S/ {{$order->total}} 
                                 </span>
                             </div>
                             <span>

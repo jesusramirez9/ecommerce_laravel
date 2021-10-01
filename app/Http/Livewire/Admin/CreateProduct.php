@@ -17,7 +17,7 @@ class CreateProduct extends Component
     public $category_id = "", $subcategory_id ="", $brand_id = "";
 
     public $name, $slug;
-    public $description, $price, $quantity;
+    public $description, $price, $quantity, $specification;
 
     protected $rules = [
         'category_id' => 'required',
@@ -27,6 +27,7 @@ class CreateProduct extends Component
         'description' => 'required',
         'brand_id' => 'required',
         'price' => 'required',
+        'specification' =>'required',
 
     ];
 
@@ -73,6 +74,7 @@ class CreateProduct extends Component
         $product->name = $this->name;
         $product->slug = $this->slug;
         $product->description = $this->description;
+        $product->specification = $this->specification;
         $product->price = $this->price;
         $product->subcategory_id = $this->subcategory_id;
         $product->brand_id = $this->brand_id;

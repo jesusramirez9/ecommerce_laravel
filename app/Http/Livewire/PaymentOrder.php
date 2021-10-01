@@ -2,9 +2,13 @@
 
 namespace App\Http\Livewire;
 
+
+use App\Mail\ResumenMailable;
 use App\Models\Order;
+use GuzzleHttp\Psr7\Request;
 use Livewire\Component;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentOrder extends Component
 {
@@ -19,12 +23,33 @@ class PaymentOrder extends Component
         $this->order = $order;
     }
 
+    public function store(Request $request){
+
+
+        
+
+    }
+
     public function payOrder(){
+        $this->authorize('author', $this->order);
+
         $this->order->status = 2;
-        $this->order->save();
+       $this->order->save();
 
         return redirect()->route('orders.show', $this->order);
     }
+    // cambie estso
+    public function create_order(){
+        $this->order->status = 2;
+        $this->order->save();
+
+        $correo = new ResumenMailable(null);
+        Mail::to( auth()->user()->email)->send($correo);
+
+        return redirect()->route('orders.show', $this->order);
+    }
+
+
 
     public function render()
     {

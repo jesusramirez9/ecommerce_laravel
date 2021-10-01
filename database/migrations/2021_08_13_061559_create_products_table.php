@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('slug');
 
             $table->text('description');
+            $table->text('specification');
 
             $table->float('price');
 

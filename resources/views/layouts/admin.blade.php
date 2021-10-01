@@ -15,8 +15,10 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     {{-- fontawesone --}}
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
-      {{--Dropzone--}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css" integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{-- Dropzone --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css"
+        integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @livewireStyles
 
@@ -27,8 +29,10 @@
     {{-- sweetalert2@ --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    {{--Dropzone--}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js" integrity="sha512-VQQXLthlZQO00P+uEu4mJ4G4OAgqTtKG1hri56kQY1DtdLeIqhKUp9W/lllDDu3uN3SnUNawpW7lBda8+dSi7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{-- Dropzone --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"
+        integrity="sha512-VQQXLthlZQO00P+uEu4mJ4G4OAgqTtKG1hri56kQY1DtdLeIqhKUp9W/lllDDu3uN3SnUNawpW7lBda8+dSi7w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="font-sans antialiased">
@@ -46,9 +50,32 @@
         @endif
 
         <!-- Page Content -->
-        <main>
+        <main class="h-auto">
             {{ $slot }}
         </main>
+        {{-- <div class=" bg-footer fixd_adm ">
+            <div class="container">
+                <div class="web_foot">
+                    <div class="flex justify-between py-5 text-white ">
+                        <div class="text-sm">
+                            © Green, Todos los derechos Reservados.
+                        </div>
+                        <div class="text-sm">
+                            Diseñado por Katana Studio
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdt_foot text-white text-center rp_foot">
+                    <div class="text-sm">
+                        © Green, Todos los derechos Reservados.
+                    </div>
+                    <div class="text-sm">
+                        Diseñado por Katana Studio
+                    </div>
+                </div>
+            </div>
+        </div> --}}
     </div>
 
     @stack('modals')
@@ -86,7 +113,7 @@
                 icon: 'error',
                 title: 'Oops...',
                 text: mensaje,
-            
+
             })
         });
     </script>

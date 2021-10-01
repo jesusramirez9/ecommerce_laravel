@@ -16,8 +16,10 @@
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-gray-700">
 
-        <h1 class="text-3xl text-center font-semibold mb-8">Complete esta información para crear un producto</h1>
-
+        <h1 class="text-3xl text-center font-semibold mb-8">Complete esta información para crear un producto automaticamente</h1>
+        <p class="text-sm">Ingresar como máximo 4 imagenes tiendo en cuenta que la primera sera la que se mostrará en el catálogo</p>
+        <p class="text-sm">Tamaño recomendado: 600*650px </p>
+        <p class="text-sm">Peso recomendado: menor a 1Mb</p>
 
 
         <div class="mb-4" wire:ignore>
@@ -29,6 +31,7 @@
         @if ($product->images->count())
             <section class="bg-white shadow-xl rounded-lg p-6 mb-4">
                 <h1 class="text-2xl text-center font-semibold mb-2">Imagenes del producto</h1>
+                <p class="text-sm">Actualizado</p>
                 <ul class="flex flex-wrap">
                     @foreach ($product->images as $image)
                         <li class="relative" wire:key="image-{{ $image->id }}">
@@ -91,7 +94,7 @@
             </div>
             {{-- Slug --}}
             <div class="mb-4">
-                <x-jet-label value="Slug" />
+                <x-jet-label value="Slug - Esto ayudara a indexar mas rápido a los navegadores " />
                 <x-jet-input disabled type="text" wire:model="slug" class="w-full bg-gray-200"
                     placeholder="Slug del producto" />
                 <x-jet-input-error for="slug" />
@@ -117,6 +120,25 @@
             } );" x-ref="miEditor"></textarea>
                 </div>
                 <x-jet-input-error for="description" />
+
+            </div>
+            <div class="mb-4">
+                <div wire:ignore>
+                    <x-jet-label value="Especificación" />
+                    <textarea wire:model="product.specification"
+                        class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                        cols="30" rows="5" x-data x-init="
+            ClassicEditor.create( $refs.miEditor )
+            .then(function(editor){
+                editor.model.document.on('change:data',() => {
+                    @this.set('product.specification', editor.getData())
+                })
+            })
+            .catch( error => {
+                console.error( error );
+            } );" x-ref="miEditor"></textarea>
+                </div>
+                <x-jet-input-error for="specification" />
 
             </div>
 
@@ -203,25 +225,25 @@
 
             };
 
-            
+
             Livewire.on('deleteProduct', () => {
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: '¿Estás seguro?',
+                    text: "¡No podrás revertir esto!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: '¡Sí, bórralo!'
                 }).then((result) => {
                     if (result.isConfirmed) {
 
-                         Livewire.emitTo('admin.edit-product', 'delete');
+                        Livewire.emitTo('admin.edit-product', 'delete');
 
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
+                            'Eliminado!',
+                            'Tu archivo ha sido eliminado.',
+                            'Éxito'
                         )
                     }
                 })
@@ -230,22 +252,22 @@
 
             Livewire.on('deleteSize', sizeId => {
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: '¿Estás seguro?',
+                    text: "¡No podrás revertir esto!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: '¡Sí, bórralo!'
                 }).then((result) => {
                     if (result.isConfirmed) {
 
                         Livewire.emitTo('admin.size-product', 'delete', sizeId);
 
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
+                            'Eliminado!',
+                            'Tu archivo ha sido eliminado.',
+                            'Éxito'
                         )
                     }
                 })
@@ -254,22 +276,22 @@
 
             Livewire.on('deletePivot', pivot => {
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: 'Estas seguro?',
+                    text: "¡No podrás revertir esto!.",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: '¡Sí, bórralo!'
                 }).then((result) => {
                     if (result.isConfirmed) {
 
                         Livewire.emitTo('admin.color-product', 'delete', pivot);
 
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
+                            'Eliminado!',
+                            'Tu archivo ha sido eliminado.',
+                            'Éxito'
                         )
                     }
                 })
@@ -278,22 +300,22 @@
 
             Livewire.on('deleteColorSize', pivot => {
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: 'Estas seguro?',
+                    text: "¡No podrás revertir esto!.",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: '¡Sí, bórralo!'
                 }).then((result) => {
                     if (result.isConfirmed) {
 
                         Livewire.emitTo('admin.color-size', 'delete', pivot);
 
                         Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
+                            'Eliminado!',
+                            'Tu archivo ha sido eliminado.',
+                            'Éxito'
                         )
                     }
                 })

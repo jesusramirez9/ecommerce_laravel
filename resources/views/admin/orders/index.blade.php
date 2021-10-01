@@ -104,7 +104,7 @@
                                     @endswitch
                                 </span>
                                 <span class="text-sm">
-                                    {{ $order->total }} USD
+                                   S/{{ $order->total }} 
                                 </span>
                             </div>
                             <span>

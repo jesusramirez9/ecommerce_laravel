@@ -49,10 +49,10 @@ class OrderController extends Controller
 
     public function pay(Order $order, Request $request)
     {
+       
 
         $this->authorize('author', $order);
 
-        // toodo lo que esta aca hay que pasarlo a webhooks cuando este en produccion
         $payment_id = $request->get('payment_id');
 
         $response = Http::get("https://api.mercadopago.com/v1/payments/$payment_id" . "?access_token=APP_USR-1794724101002108-082001-174b2ac0bacfa61ed7518f8de1d36434-810672029");
@@ -65,6 +65,9 @@ class OrderController extends Controller
             $order->status = 2;
             $order->save();
         }
+
+        $order->status = 2;
+            $order->save();
 
         return redirect()->route('orders.show', $order);
     }

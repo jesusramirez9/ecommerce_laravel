@@ -1,29 +1,29 @@
 <x-app-layout>
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
+    <div class="max-w-5xl mt-14 mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-12 pb-12 py-12">
 
-        <div class="bg-white rounded-lg shadow-lg px-12 py-8 mb-6 flex items-center">
+        <div class="bg-white rounded-lg shadow-lg px-6 md:px-12 py-8 mb-6 flex items-center">
 
             <div class="relative">
                 <div
-                    class="{{ $order->status >= 2 && $order->statud != 5 ? 'bg-blue-400 ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
+                    class="{{ $order->status >= 2 && $order->statud != 5 ? 'bg-green-700 ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
                     <i class="fas fa-check text-white"></i>
                 </div>
                 <div class="absolute -left-1.5 mt-0.5">
-                    <p>Recibido</p>
+                    <p class="text-sm">Recibido</p>
                 </div>
             </div>
 
             <div
-                class="{{ $order->status >= 3 && $order->statud != 5 ? 'bg-blue-400 ' : 'bg-gray-400 ' }}h-1 flex-1 mx-2">
+                class="{{ $order->status >= 3 && $order->statud != 5 ? 'bg-green-700 ' : 'bg-gray-400 ' }}h-1 flex-1 mx-2">
             </div>
 
             <div class="relative">
                 <div
-                    class="{{ $order->status >= 3 && $order->statud != 5 ? 'bg-blue-400 ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
+                    class="{{ $order->status >= 3 && $order->statud != 5 ? 'bg-green-700 ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
                     <i class="fas fa-truck text-white"></i>
                 </div>
                 <div class="absolute -left-1 mt-0.5">
-                    <p>Enviado</p>
+                    <p class="text-sm md:text-base">Enviado</p>
                 </div>
             </div>
 
@@ -37,7 +37,7 @@
                     <i class="fas fa-check text-white"></i>
                 </div>
                 <div class="absolute -left-1 mt-0.5">
-                    <p>Entregado</p>
+                    <p class="text-sm md:text-base">Entregado</p>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
                     <i class="fas fa-window-close text-white "></i>
                 </div>
                 <div class="{{ $order->status == 5 ? ' block' : 'hidden' }} absolute -left-1 mt-0.5">
-                    <p>Anulado</p>
+                    <p class="text-sm md:text-base">Anulado</p>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
 
         </div>
         <div class="bg-white rounded-lg shadow-lg px-6 py-4 mb-6 flex items-center">
-            <p class="text-gray-700 uppercase"> <span class="font-semibold">Número de orden:</span>
+            <p class="colorbroywm font-bold uppercase"> <span class="colorverderr font-bold">Número de orden:</span>
                 Orden-{{ $order->id }}</p>
             @if ($order->status == 1)
                 <x-button-enlace class=" bg-red-400 ml-auto cursor-pointer"
@@ -71,36 +71,36 @@
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
             <div class="grid grid-cols-2 gap-6 text-gray-700">
                 <div>
-                    <p class="text-lg font-semibold uppercase">Envío</p>
+                    <p class="text-lg colorverderr font-bold uppercase">Envío</p>
                     @if ($order->envio_type == 1)
-                        <p class="text-sm">Los productos deben ser recogidos en tienda</p>
-                        <p class="text-sm">Calle falsa 123</p>
+                        <p class="text-sm colorbroywm font-bold">Los productos deben ser recogidos en tienda</p>
+                        <p class="text-sm colorbroywm font-bold">Calle falsa 123</p>
                     @else
-                        <p class="text-sm">Los productos serán enviados a:</p>
-                        <p class="text-sm">{{ $envio->address }}</p>
-                        <p>{{ $envio->department }} - {{ $envio->city }} -
+                        <p class="text-sm colorbroywm font-bold">Los productos serán enviados a:</p>
+                        <p class="text-sm colorbroywm font-bold">{{ $envio->address }}</p>
+                        <p class="colorbroywm font-bold">{{ $envio->department }} - {{ $envio->city }} -
                             {{ $envio->district }}</p>
                     @endif
                 </div>
 
                 <div>
-                    <p class="text-lg font-semibold uppercase">Datos de contacto</p>
-                    <p class="text-sm">Persona que recibirá el producto: {{ $order->contact }}</p>
-                    <p class="text-sm">Teléfono de contacto {{ $order->phone }}</p>
+                    <p class="text-lg colorverderr font-bold uppercase">Datos de contacto</p>
+                    <p class="text-sm colorverderr font-bold">Persona que recibirá el producto: <span class="colorbroywm font-bold">{{ $order->contact }}</span> </p>
+                    <p class="text-sm colorverderr font-bold">Teléfono de contacto: <span class="colorbroywm font-bold"> {{ $order->phone }}</span></p>
                 </div>
             </div>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6 text-gray-700">
-            <p class="text-xl font-semibold mb-4">Resumen</p>
+            <p class="text-xl mb-4 colorverderr font-bold">Resumen</p>
 
             <table class="table-auto w-full">
                 <thead>
-                    <tr>
+                    <tr class="colorverderr font-bold">
                         <th></th>
-                        <th>Precio</th>
-                        <th>Canti</th>
-                        <th>total</th>
+                        <th class="text-xs sm:text-base">Precio</th>
+                        <th class="text-xs sm:text-base">Canti</th>
+                        <th class="text-xs sm:text-base">total</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200">
@@ -109,11 +109,15 @@
                         <tr>
                             <td>
                                 <div class="flex ">
-                                    <img class="h-15 w-20 object-cover mr-4" src="{{ $item->options->image }}"
+                                    
+                                        <img class="h-15 w-20 object-cover mr-4" src="{{ $item->options->image }}"
                                         alt="">
+                                        
+                                  
+                                    
                                     <article>
-                                        <h1 class="font-bold">{{ $item->name }}</h1>
-                                        <div class="flex text-xs">
+                                        <h1 class="font-bold txttitel_resumen">{{ $item->name }}</h1>
+                                        <div class="flex text-xs txttitel_resumen">
                                             @isset($item->options->color)
                                                 Color: {{ __($item->options->color) }}
                                             @endisset
@@ -125,14 +129,14 @@
                                     </article>
                                 </div>
                             </td>
-                            <td class="text-center">
-                                {{ $item->price }} USD
+                            <td class="text-center colorbroywm font-bold text-xs sm:text-base">
+                               S/{{ $item->price }} 
                             </td>
-                            <td class="text-center">
+                            <td class="text-center colorbroywm font-bold text-xs sm:text-base">
                                 {{ $item->qty }}
                             </td>
-                            <td class="text-center">
-                                {{ $item->price * $item->qty }} USD
+                            <td class="text-center colorbroywm font-bold text-xs sm:text-base">
+                              S/{{ $item->price * $item->qty }} 
                             </td>
                         </tr>
                     @endforeach

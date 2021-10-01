@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
@@ -24,7 +25,8 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 |
 */
 
-Route::get('/', WelcomeController::class);
+Route::get('/', WelcomeController::class)->name('home');
+
 Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 
 Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
@@ -41,14 +43,58 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 
+
     // Route::get('orders/{order}/payment', [OrderController::class,'payment'])->name('orders.payment');
 
     Route::get('orders/{order}/payment', PaymentOrder::class, 'payment')->name('orders.payment');
 
-    Route::get('orders/{order}/pay', [OrderController::class, 'pay'])->name('orders.pay');
+    Route::post('orders/{order}/payment', PaymentOrder::class, 'store')->name('orders.store');
+
+    Route::post('order/pay', [OrderController::class, 'pay'])->name('orders.pay');
 
     Route::post('webhooks', WebhooksController::class);
+
+
+
 });
+
+Route::get('preguntas-frecuentes', function () {
+    return view('web.pregunta-frecuente');
+})->name('preguntasfrecuentes');
+
+Route::get('terminos-condiciones', function () {
+    return view('web.termino-condicion');
+})->name('terminoscondiciones');
+
+Route::get('cambios-devoluciones', function () {
+    return view('web.cambio-devolucion');
+})->name('cambiosdevoluciones');
+
+Route::get('tiempos-entrega', function () {
+    return view('web.tiempo-entrega');
+})->name('tiempoentrega');
+
+Route::get('conocenos', function () {
+    return view('web.conocenos');
+})->name('conocenos');
+
+Route::get('blog', function () {
+    return view('web.blog');
+})->name('bloga');
+
+Route::get('libro-reclamaciones', function () {
+    return view('web.reclamaciones');
+})->name('reclamacion');
+
+
+Route::get('blog-detalle', function () {
+    return view('web.blog-detalle');
+})->name('blogdetalle');
+
+Route::get('contactanos',[ContactoController::class, 'index'])->name('contacto');
+
+Route::post('contactanos',[ContactoController::class, 'store'])->name('contacto.store');
+
 
 
 
