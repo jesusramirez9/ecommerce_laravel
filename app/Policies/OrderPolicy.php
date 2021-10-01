@@ -13,11 +13,10 @@ class OrderPolicy
   
     public function author(User $user, Order $order)
     {   
-        dd($user,$order);
         if ($order->user_id == $user->id) {
             return true;
         }else{
-            return true;
+            return false;
         }
 
         //true: visualiza la orden a un authorizado
@@ -30,7 +29,7 @@ class OrderPolicy
         if ($order->status == 2) {
             return true;
         }else{
-            return true;
+            return false;
         }
 
         //true: visualiza la orden a un authorizado

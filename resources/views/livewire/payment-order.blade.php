@@ -46,35 +46,35 @@
         
         // MercadoPago\SDK::setAccessToken(config('services.mercadopago.token'));
         
-        Crea un objeto de preferencia
+        //Crea un objeto de preferencia
         
-        $preference = new MercadoPago\Preference();
-        $shipments = new MercadoPago\Shipments();
-        $shipments->cost = $order->shipping_cost;
-        $shipments->mode = 'not_specified';
-        $preference->shipments = $shipments;
+        // $preference = new MercadoPago\Preference();
+        // $shipments = new MercadoPago\Shipments();
+        // $shipments->cost = $order->shipping_cost;
+        // $shipments->mode = 'not_specified';
+        // $preference->shipments = $shipments;
         
-        Crea un ítem en la preferencia
+        //Crea un ítem en la preferencia
         
-        foreach ($items as $product) {
+        // foreach ($items as $product) {
         
-            $item = new MercadoPago\Item();
-            $item->title = $product->name;
-            $item->quantity = $product->qty;
-            $item->unit_price = $product->price;
+        //     $item = new MercadoPago\Item();
+        //     $item->title = $product->name;
+        //     $item->quantity = $product->qty;
+        //     $item->unit_price = $product->price;
         
-            $products[] = $item;
-        }
+        //     $products[] = $item;
+        // }
         
-        $preference->back_urls = [
-            'success' => route('orders.pay', $order),
-            'failure' => 'http://www.tu-sitio/failure',
-            'pending' => 'http://www.tu-sitio/pending',
-        ];
-        $preference->auto_return = 'approved';
+        // $preference->back_urls = [
+        //     'success' => route('orders.pay', $order),
+        //     'failure' => 'http://www.tu-sitio/failure',
+        //     'pending' => 'http://www.tu-sitio/pending',
+        // ];
+        // $preference->auto_return = 'approved';
         
-        $preference->items = $products;
-        $preference->save();
+        // $preference->items = $products;
+        // $preference->save();
         
     @endphp
 
@@ -214,7 +214,6 @@
                 </x-jet-button> --}}
 
                 <div class="kr-embedded" kr-form-token="<?php echo $formToken; ?>">
-
                     <!-- payment form fields -->
                     <div class="kr-pan"></div>
                     <div class="kr-expiry"></div>
@@ -229,17 +228,13 @@
             </div>
 
         </div>
-        <form action="{{route('orders.pay')}}" method="POST">
-            @csrf
-            <input type="text" name="name" value="sadsad">
-            <button type="submit">enciar</button>
-        </form>
+        
     </div>
 
     <script 
     src="<?php echo $client->getClientEndpoint(); ?>/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
         kr-public-key="<?php echo $client->getPublicKey(); ?>"
-        kr-post-url-success="{{route('orders.pay')}}">
+        kr-post-url-success="{{route('orders.pay', $order)}}">
     </script>
 
     {{-- <script src="https://sdk.mercadopago.com/js/v2"></script> --}}

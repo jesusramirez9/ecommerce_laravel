@@ -50,7 +50,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('orders/{order}/payment', PaymentOrder::class, 'store')->name('orders.store');
 
-    Route::post('order/pay', [OrderController::class, 'pay'])->name('orders.pay');
+    Route::post('orders/{order}/pay', [OrderController::class, 'pay'])->name('orders.pay');
 
     Route::post('webhooks', WebhooksController::class);
 

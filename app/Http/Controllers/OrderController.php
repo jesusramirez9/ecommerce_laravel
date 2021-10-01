@@ -49,25 +49,19 @@ class OrderController extends Controller
 
     public function pay(Order $order, Request $request)
     {
-       
-
         $this->authorize('author', $order);
+        // $payment_id = $request->get('payment_id');
+        // $response = Http::get("https://api.mercadopago.com/v1/payments/$payment_id" . "?access_token=APP_USR-1794724101002108-082001-174b2ac0bacfa61ed7518f8de1d36434-810672029");
+        // $response = json_decode($response);
+        // $status = $response->status;
 
-        $payment_id = $request->get('payment_id');
-
-        $response = Http::get("https://api.mercadopago.com/v1/payments/$payment_id" . "?access_token=APP_USR-1794724101002108-082001-174b2ac0bacfa61ed7518f8de1d36434-810672029");
-
-        $response = json_decode($response);
-
-        $status = $response->status;
-
-        if ($status == 'approved') {
-            $order->status = 2;
-            $order->save();
-        }
+        // if ($status == 'approved') {
+        //     $order->status = 2;
+        //     $order->save();
+        // }
 
         $order->status = 2;
-            $order->save();
+        $order->save();
 
         return redirect()->route('orders.show', $order);
     }
