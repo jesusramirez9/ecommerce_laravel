@@ -38,7 +38,6 @@ class UpdateCartSize extends Component
     }
 
 
-
     public function render()
     {
         return view('livewire.update-cart-size');

@@ -92,12 +92,12 @@
                 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     @forelse ($products as $product)
                         <li class="bg-white  ">
-                            <article class="zoomcatalg">
+                            <article class="zoomcatalg ">
                                 <a href="{{ route('products.show', $product) }}">
                                     <figure>
                                         
                                         @if ($product->images->count())
-                                            <img class="h-80 w-full object-cover object-center"
+                                            <img class="h-80 w-full object-cover object-center scrollflow -slide-bottom -opacity"
                                                 src="{{ Storage::url($product->images->first()->url) }}" alt="">
                                         @else
                                             <img class="h-80 w-full object-cover object-center"
@@ -107,12 +107,12 @@
 
                                     </figure>
                                     <div class="py-2 px-2">
-                                        <h1 class="text-lg browmcolrd font-semibold ">
+                                        <h1 class="text-lg browmcolrd font-semibold scrollflow -slide-bottom -opacity">
 
                                             {{ Str::limit($product->name, 14, '...') }}
 
                                         </h1>
-                                        <p class="font-bold text-green-700">S/ {{ $product->price }}</p>
+                                        <p class="font-bold text-green-700 scrollflow -slide-bottom -opacity">S/ {{ $product->price }}</p>
 
                                     </div>
                                 </a>
@@ -145,9 +145,9 @@
                 </ul>
             @endif
 
-            {{-- <div class="mt-4 links_mds">
+          <div class="mt-4 links_mds">
                 {{ $products->links() }}
-            </div> --}}
+            </div>
         </div>
     </div>
 

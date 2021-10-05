@@ -1,21 +1,21 @@
 <x-app-layout>
-    <div>
+    <div class="ovfrhiddn">
         <div class="bgfondo bgfondoprguntfe  w-full h-96 relative ">
             <div class="absolute positionimg">
-                <img src="{{ asset('images/tiemposdeentrega/img.png') }}" class="imgbg" alt="">
+                <img src="{{ asset('images/tiemposdeentrega/img.png') }}" class="imgbg animate__animated animate__fadeInRight" alt="">
             </div>
             <div class="absolute txtp txtpprguntafre">
-                <p class="txtp2blog">Libro de</p>
-                <p class="txtp2blog">Reclamaciones</p>
+                <p class="txtp2blog animate__animated animate__fadeInLeft">Libro de</p>
+                <p class="txtp2blog animate__animated animate__fadeInLeft">Reclamaciones</p>
             </div>
         </div>
     </div>
-    <div class="mt-14 container">
+    <div class="mt-14 container ovfrhiddn">
 
-        <p class="ylowwsa text-xl lg:text-2xl xl:text-3xl mb-14">¿Quieres presentar tu reclamo o requerimiento por correo
+        <p class="ylowwsa text-xl lg:text-2xl xl:text-3xl mb-14 scrollflow -slide-top -opacity">¿Quieres presentar tu reclamo o requerimiento por correo
             electrónico? <br>Lee los siguientes pasos:</p>
 
-        <div class="label">
+        <div class="label scrollflow -slide-top -opacity">
             <div class="flex md:items-center">
                 <div class="w-9 h-9  text-left font-bold rounded-full text-green-700 ">
                     01.
@@ -30,7 +30,8 @@
                 </div>
             </div>
         </div>
-        <div class="label">
+        <br>
+        <div class="label scrollflow -slide-top -opacity">
             <div class="flex">
                 <div class="w-9 h-9  text-left font-bold rounded-full text-green-700 ">
                     02.
@@ -40,7 +41,8 @@
                 </div>
             </div>
         </div>
-        <div class="label">
+        <br>
+        <div class="label scrollflow -slide-top -opacity">
             <div class="flex">
                 <div class="w-9 h-9  text-left font-bold rounded-full text-green-700 ">
                     03.
@@ -50,7 +52,8 @@
                 </div>
             </div>
         </div>
-        <div class="label">
+        <br>
+        <div class="label scrollflow -slide-top -opacity">
             <div class="flex">
                 <div class="w-9 h-9  text-left font-bold rounded-full text-green-700 ">
                     04.
@@ -63,7 +66,8 @@
                 </div>
             </div>
         </div>
-        <div class="label">
+        <br>
+        <div class="label scrollflow -slide-top -opacity">
             <div class="flex">
                 <div class="w-9 h-9  text-left font-bold rounded-full text-green-700 ">
                     05.
@@ -76,7 +80,8 @@
                 </div>
             </div>
         </div>
-        <div class="label">
+        <br>
+        <div class="label scrollflow -slide-top -opacity">
             <div class="flex">
                 <div class="w-9 h-9  text-left font-bold rounded-full text-green-700 ">
                     06.
@@ -86,27 +91,28 @@
                 </div>
             </div>
         </div>
+        <br>
         <div class="grid grid-cols-1 md:grid-cols-6 mt-6 md:mt-10 pb-12">
             <div class="md:col-span-2  lg:col-span-1 bg-greend">
                 <div class="flex justify-center py-14">
-                    <img src="{{ asset('images/reclamaciones/icon_.png') }}" class=" h-24" alt="">
+                    <img src="{{ asset('images/reclamaciones/icon_.png') }}" class=" h-24 scrollflow -slide-right -opacity" alt="">
                 </div>
             </div>
             <div class="md:col-span-4 lg:col-span-5 bg-bord-greend">
                 <div class="mx-6 py-7">
-                    <p class=" mb-2 font-base text-justify">
+                    <p class=" mb-2 font-base text-justify scrollflow -slide-left -opacity">
                         Green SAC, con RUC 88598982, propietario de la marca GREEN – looks different, con domicilio
                         Calle Sao Paulo 120, Lince, Lima 15084 - Perú.
-                    <p class="mb-2">
+                    <p class="mb-2 scrollflow -slide-left -opacity">
                         <span class="vrdbld"> RECLAMO:</span> Disconformidad relacionada a los productos o
                         servicios.
 
-                    <p class="mb-2">
+                    <p class="mb-2 scrollflow -slide-left -opacity">
                         <span class="vrdbld">QUEJA:</span> Disconformidad no relacionada a los productos o
                         servicios o malestar o descontento
                         respecto a la atención a los clientes.
                     </p>
-                    <p>
+                    <p class="scrollflow -slide-left -opacity">
                         La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es
                         requisito previo para interponer una denuncia ante el INDECOPI.
                     </p>

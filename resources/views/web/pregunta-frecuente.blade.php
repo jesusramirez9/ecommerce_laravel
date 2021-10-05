@@ -1,20 +1,20 @@
 <x-app-layout>
 
-    <div>
+    <div class="ovfrhiddn">
         <div class="bgfondo bgfondoprguntfe  w-full h-96 relative ">
             <div class="absolute positionimg">
-                <img src="{{ asset('images/tiemposdeentrega/img.png') }}" class="imgbg" alt="">
+                <img src="{{ asset('images/tiemposdeentrega/img.png') }}" class="imgbg animate__animated animate__fadeInRight" alt="">
             </div>
             <div class="absolute txtp txtpprguntafre">
-                <p class="txtp2blog">Preguntas</p>
-                <p class="txtp2blog">Frecuentes</p>
+                <p class="txtp2blog animate__animated animate__fadeInLeft">Preguntas</p>
+                <p class="txtp2blog animate__animated animate__fadeInLeft">Frecuentes</p>
             </div>
         </div>
     </div>
 
-    <div class="container py-14">
-        <div class="accordion">
-            <div class="contentBx">
+    <div class="container py-14 ovfrhiddn">
+        <div class="accordion scrollflow -slide-top -opacity">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -34,8 +34,8 @@
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -52,8 +52,8 @@
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                  <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -66,15 +66,14 @@
                 </div>
                 <div class="content">
                     <p class="ml-2 md:ml-14 lg:text-justify">
-                        En Green nos preocupamos por la seguridad de tus datos y por la protección de la privacidad de nuestros clientes. Por esta razón, te garantizamos que todos tus datos están vigilados bajo los estándares más altos de seguridad. <br> 
-Toda la información que ingreses queda automáticamente protegida por un certificado SSL (Secure Sockets Layer) que garantiza una transacción 100% segura. Este sistema encripta los datos suministrados y evita su uso desautorizado.
+                        En Green nos preocupamos por la seguridad de tus datos y por la protección de la privacidad de nuestros clientes. Por esta razón, te garantizamos que todos tus datos están vigilados bajo los estándares más altos de seguridad. <br> Toda la información que ingreses queda automáticamente protegida por un certificado SSL (Secure Sockets Layer) que garantiza una transacción 100% segura. Este sistema encripta los datos suministrados y evita su uso desautorizado.
 
                     </p>
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -92,8 +91,8 @@ Toda la información que ingreses queda automáticamente protegida por un certif
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -111,8 +110,8 @@ Toda la información que ingreses queda automáticamente protegida por un certif
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -130,8 +129,8 @@ Toda la información que ingreses queda automáticamente protegida por un certif
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -149,8 +148,8 @@ Toda la información que ingreses queda automáticamente protegida por un certif
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -168,8 +167,8 @@ Toda la información que ingreses queda automáticamente protegida por un certif
                 </div>
             </div>
         </div>
-        {{-- <div class="accordion mt-4">
-            <div class="contentBx">
+        {{-- <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -188,8 +187,8 @@ Toda la información que ingreses queda automáticamente protegida por un certif
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -208,8 +207,8 @@ Toda la información que ingreses queda automáticamente protegida por un certif
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -228,8 +227,8 @@ Toda la información que ingreses queda automáticamente protegida por un certif
                 </div>
             </div>
         </div>
-        <div class="accordion mt-4">
-            <div class="contentBx">
+        <div class="accordion scrollflow -slide-top -opacity mt-4">
+            <div class="contentBx ">
                 <div class="label">
                     <div class="flex items-center">
                         <div class="w-9 h-9 text-center bg-greend rounded-full text-circl txtrosa">
@@ -254,7 +253,7 @@ Toda la información que ingreses queda automáticamente protegida por un certif
 
     @push('script')
         <script>
-              const accordion = document.getElementsByClassName('contentBx');
+              const accordion = document.getElementsByClassName('contentBx ');
 
               for ( i = 0; i < accordion.length; i++) {
                   accordion[i].addEventListener('click', function(){

@@ -13,7 +13,7 @@
                 </div>
             @endif
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-14">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 ">
                 <div class="alselcent">
                     <div class="flex items-center justify-center text-center pb-6 ">
                         <div>

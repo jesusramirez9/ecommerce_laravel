@@ -102,7 +102,7 @@ class CategoryFilter extends Component
             });
         }
 
-        $products = $productsQuery->paginate(9);
+        $products = $productsQuery->paginate(12);
 
         return view('livewire.category-filter', compact('products', 'colors_product', 'talla_product', 'precio_product'));
     }

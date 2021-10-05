@@ -3,12 +3,14 @@
 namespace App\Http\Livewire;
 
 
-use App\Mail\ResumenMailable;
+
 use App\Models\Order;
 use GuzzleHttp\Psr7\Request;
 use Livewire\Component;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 use Illuminate\Support\Facades\Mail;
+use App\Mail\ResumenMailable;
 
 class PaymentOrder extends Component
 {

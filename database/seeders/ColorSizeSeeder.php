@@ -16,16 +16,15 @@ class ColorSizeSeeder extends Seeder
     {
         //
         $sizes = Size::all();
+
         foreach ($sizes as $size) {
-            # code...
-            $size->colors()->attach([
-            1  => ['quantity' => 10],
-            2  => ['quantity' => 10],
-            3  => ['quantity' => 10],
-            4  => ['quantity' => 10],
-            5  => ['quantity' => 10]
-        
-        ]);
+            $size->colors()
+                ->attach([  
+                            1 => ['quantity' => 10],
+                            2 => ['quantity' => 10],
+                            3 => ['quantity' => 10],
+                            4 => ['quantity' => 10]
+                        ]);
         }
     }
 }

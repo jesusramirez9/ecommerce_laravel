@@ -1,17 +1,17 @@
  <x-app-layout>
-     <div>
+     <div class="ovfrhiddn">
          <div class="bgfondo bgfondo_time  w-full h-96 relative ">
              <div class="absolute positionimg">
-                 <img src="{{ asset('images/tiemposdeentrega/img.png') }}" class="imgbg" alt="">
+                 <img src="{{ asset('images/tiemposdeentrega/img.png') }}" class="imgbg animate__animated animate__fadeInRight" alt="">
              </div>
              <div class="absolute txtp txtptime">
-                 <p class="txtp2blog">Tiempos de</p>
-                 <p class="txtp3blog">Entrega</p>
+                 <p class="txtp2blog animate__animated animate__fadeInLeft">Tiempos de</p>
+                 <p class="txtp3blog animate__animated animate__fadeInLeft">Entrega</p>
              </div>
          </div>
      </div>
 
-     <div class="container">
+     <div class="container ovfrhiddn">
          {{-- <div class="grid grid-cols-1 md:grid-cols-3 gap-7 mt-8 md:mt-14 text-white">
             <div>
                 <div class="bg-greend text-center py-4">
@@ -96,16 +96,16 @@
          <div class="grid grid-cols-1 md:grid-cols-1 gap-7 mt-8 md:mt-14 text-white">
              <div>
                  <div class="bg-greend text-center py-4">
-                     <p class=" text-2xl md:text-3xl font-bold leading-tight">Envíos </p>
-                     <p class=" text-2xl md:text-xl font-semibold">Shipping</p>
+                     <p class=" text-2xl md:text-3xl font-bold leading-tight scrollflow -slide-top -opacity">Envíos </p>
+                     <p class=" text-2xl md:text-xl font-semibold scrollflow -slide-top -opacity">Shipping</p>
                  </div>
                  <div class="mt-4 bg-bord-greend">
-                     <p class="py-6 px-4 txt-lasted txt-last1 font-bold text-justify">
+                     <p class="py-6 px-4 txt-lasted txt-last1 font-bold text-justify scrollflow -slide-top -opacity">
                          Hacemos envíos a todo el Perú, América Y Europa.
                          <br><br>
                          We do international shipping
                      </p>
-                     <div class="flex justify-center pb-8">
+                     <div class="flex justify-center pb-8 scrollflow -slide-bottom -opacity">
                          <img src="{{ asset('images/tiemposdeentrega/delivery.png') }}" class=" h-24" alt="">
                      </div>
                  </div>
@@ -116,11 +116,11 @@
 
              <div>
                  <div class="bg-greend text-center py-4">
-                     <p class=" text-2xl md:text-3xl font-bold leading-tight">Envíos a todo el Perú </p>
-                     <p class=" text-2xl md:text-xl font-semibold">Lima y todas las provincias</p>
+                     <p class=" text-2xl md:text-3xl font-bold leading-tight scrollflow -slide-top -opacity">Envíos a todo el Perú </p>
+                     <p class=" text-2xl md:text-xl font-semibold scrollflow -slide-top -opacity">Lima y todas las provincias</p>
                  </div>
                  <div class="mt-4 bg-bord-greend">
-                     <p class="py-6 px-4 txt-lasted txt-last1 font-bold text-justify">
+                     <p class="py-6 px-4 txt-lasted txt-last1 font-bold text-justify scrollflow -slide-top -opacity">
                          Contamos con motorizados propios para las entregas en Lima y Callao, tiempo de tránsito:1-2
                          días útiles para Lima.
                          <br>
@@ -138,17 +138,17 @@
                          prendas en liquidación o promoción.
                      </p>
                      <div class="flex justify-center pb-8">
-                         <img src="{{ asset('images/tiemposdeentrega/scooter.png') }}" class=" h-24" alt="">
+                         <img src="{{ asset('images/tiemposdeentrega/scooter.png') }}" class=" h-24 scrollflow -slide-bottom -opacity" alt="">
                      </div>
                  </div>
              </div>
              <div>
                  <div class="bg-greend text-center py-4">
-                     <p class=" text-2xl md:text-3xl font-bold leading-tight">Noche </p>
-                     <p class=" text-2xl md:text-xl font-semibold">(7 am - 10 pm) </p>
+                     <p class=" text-2xl md:text-3xl font-bold leading-tight scrollflow -slide-top -opacity">Noche </p>
+                     <p class=" text-2xl md:text-xl font-semibold scrollflow -slide-top -opacity">(7 am - 10 pm) </p>
                  </div>
                  <div class="mt-4 bg-bord-greend">
-                     <p class="py-6 px-4 txt-lasted txt-last1 font-bold text-justify">
+                     <p class="py-6 px-4 txt-lasted txt-last1 font-bold text-justify scrollflow -slide-top -opacity">
                          Para estos envíos favor de escribirnos al correo comercial@greenmodaperu.com para hacer las
                          coordinaciones respectivas, usamos DHL courier para envios hacia todos los países de América
                          Latina, Norte America y Europa previa coordinacion, favor de considerar que no están incluidos
@@ -156,7 +156,7 @@
                          un paquete es rechazado y devuelto, las tarifas relacionadas se deducirán de su reembolso.
                      </p>
                      <div class="flex justify-center pb-8">
-                         <img src="{{ asset('images/tiemposdeentrega/fast-delivery.png') }}" class=" h-24"
+                         <img src="{{ asset('images/tiemposdeentrega/fast-delivery.png') }}" class=" h-24 scrollflow -slide-bottom -opacity"
                              alt="">
                      </div>
                  </div>

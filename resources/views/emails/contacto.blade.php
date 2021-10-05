@@ -42,7 +42,7 @@
             <small>© {{ date('Y') }} Green Look Different. Todos los derechos reservados.</small>
         </div>
     </section> --}}
-asd
+
     <section class="bg-green-500">
         <div class="p-8">
             <div class="mb-2">

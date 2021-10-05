@@ -1,26 +1,27 @@
 <x-app-layout>
-    <div>
+    <div class="ovfrhiddn">
         <div class="bgfondo bgfondoconocenos  w-full h-96 relative ">
             <div class="absolute positionimg">
-                <img src="{{ asset('images/conocenos/foto1.png') }}" class="imgbg" alt="">
+                <img src="{{ asset('images/conocenos/foto1.png') }}" class="imgbg 
+                animate__animated animate__fadeInRight" alt="">
             </div>
             <div class="absolute txtp txtpconocenos">
-                <p class="txtp3blog">Nuestra</p>
-                <p class="txtp3blog">Historia</p>
+                <p class="txtp3blog animate__animated animate__fadeInLeft">Nuestra</p>
+                <p class="txtp3blog animate__animated animate__fadeInLeft">Historia</p>
             </div>
         </div>
     </div>
-    <div class="container mt-10 ">
-        <p class="txt-lasted text-gray-700 text-justify">
+    <div class="container mt-10 ovfrhiddn">
+        <p class="txt-lasted text-gray-700 text-justify scrollflow -slide-top -opacity">
             Green, es una marca de ropa para damas y caballeros, creada con la finalidad de brindar una opción diferente a las convencionales del mercado; nuestra tienda on line presenta colecciones pequeñas pero exclusivas y personalizables de ser requerido por el cliente; contamos con más de 20 años de experiencia atendiendo a diversas marcas y diseñadores del medio en nuestro taller textil por ello tenemos el mejor soporte de garantía y experiencia necesaria para llevar a cabo esta nueva aventura de ser una marca propia, de diseño independiente que promueve la reducción de residuos, uso de tecnologías limpias y respetuosas con el medio ambiente y con un claro enfoque verde, se parte de nuestro enfoque, se Green!
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-6 gap-6 mt-10">
-            <div class="col-span-2">
-                <img src="{{ asset('images/conocenos/img1.jpg') }}" class="w-full" alt="">
+            <div class="col-span-4 md:col-span-2">
+                <img src="{{ asset('images/conocenos/img1.jpg') }}" class="w-full scrollflow -slide-right -opacity" alt="">
             </div>
             <div class="col-span-4">
-                <img src="{{ asset('images/conocenos/img2.jpg') }}" class="w-full" alt="">
+                <img src="{{ asset('images/conocenos/img2.jpg') }}" class="w-full h-100 scrollflow -slide-left -opacity" alt="">
             </div>
         </div>
         <div class="mt-10">
@@ -37,7 +38,7 @@
         </p> --}}
 
         <div class="mt-10">
-            <img src="{{ asset('images/conocenos/img3.jpg') }}" class="w-full" alt="">
+            <img src="{{ asset('images/conocenos/img3.jpg') }}" class="w-full scrollflow -slide-top -opacity" alt="">
         </div>
         {{-- <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             <div>
@@ -69,15 +70,15 @@
         </div> --}}
 
     </div>
-    <div class=" grid grid-cols-1 md:grid-cols-3 pt-16 mt-10 ">
+    <div class=" grid grid-cols-1 md:grid-cols-3 pt-16 mt-10 ovfrhiddn">
        <div>
-        <img src="{{ asset('images/conocenos/img4.jpg') }}" class="w-full" alt="">
+        <img src="{{ asset('images/conocenos/img4.jpg') }}" class="w-full scrollflow -slide-right -opacity" alt="">
        </div>
        <div>
-        <img src="{{ asset('images/conocenos/img5.jpg') }}" class="w-full" alt="">
+        <img src="{{ asset('images/conocenos/img5.jpg') }}" class="w-full scrollflow -slide-top -opacity" alt="">
        </div>
        <div>
-        <img src="{{ asset('images/conocenos/img6.jpg') }}" class="w-full" alt="">
+        <img src="{{ asset('images/conocenos/img6.jpg') }}" class="w-full scrollflow -slide-left -opacity" alt="">
        </div>
     </div>
 </x-app-layout>

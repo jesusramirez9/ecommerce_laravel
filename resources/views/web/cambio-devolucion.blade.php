@@ -1,22 +1,22 @@
 <x-app-layout>
-    <div>
+    <div class="ovfrhiddn">
         <div class="bgfondo bg-cmbio w-full h-96 relative ">
             <div class="absolute positionimg">
-                <img src="{{ asset('images/cambiosydevoluciones/img.png') }}" class="imgbg" alt="">
+                <img src="{{ asset('images/cambiosydevoluciones/img.png') }}" class="imgbg animate__animated animate__fadeInRight" alt="">
             </div>
             <div class="absolute txtp txtp-cmbio">
-                <p class="txtp2blog">Cambios y</p>
-                <p class="txtp2blog">Devoluciones</p>
+                <p class="txtp2blog animate__animated animate__fadeInLeft">Cambios y</p>
+                <p class="txtp2blog animate__animated animate__fadeInLeft">Devoluciones</p>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container ovfrhiddn">
         <div class=" mt-4 md:mt-14">
             <div class="flex">
-                <img src="{{ asset('images/cambiosydevoluciones/box.png') }}" alt="" class="h-9">
-                <h1 class="ml-4 titlecambio">Devolución de efectivo</h1>
+                <img src="{{ asset('images/cambiosydevoluciones/box.png') }}" alt="" class="h-9 scrollflow -slide-right -opacity">
+                <h1 class="ml-4 titlecambio scrollflow -slide-right -opacity">Devolución de efectivo</h1>
             </div>
-            <p class="text-justify textli">Todas nuestras prendas son revisadas cuidadosamente antes de ser enviadas a
+            <p class="text-justify textli scrollflow -slide-top -opacity">Todas nuestras prendas son revisadas cuidadosamente antes de ser enviadas a
                 nuestros clientes. A pesar de ello, si recibiste un producto que no está en buenas condiciones por favor
                 contáctate con nosotros en los siguientes 2 días calendario después de recibido el producto. Solo aplica
                 devolución de efectivo en caso la prenda haya llegado al cliente dañada, manchada o defectuosa. <br><br>
@@ -28,22 +28,22 @@
 
             <div class=" mt-10">
                 <div class="flex">
-                    <img src="{{ asset('images/cambiosydevoluciones/box.png') }}" alt="" class="h-9">
-                    <h1 class="ml-4 titlecambio">Solicitud de cambios</h1>
+                    <img src="{{ asset('images/cambiosydevoluciones/box.png') }}" alt="" class="h-9 scrollflow -slide-right -opacity">
+                    <h1 class="ml-4 titlecambio scrollflow -slide-right -opacity">Solicitud de cambios</h1>
                 </div>
-                <p class="text-justify textli">Si la prenda adquirida a través de la web no te gustó o no te quedó según
+                <p class="text-justify textli scrollflow -slide-top -opacity">Si la prenda adquirida a través de la web no te gustó o no te quedó según
                     lo esperado, no te preocupes! Puedes cambiar la prenda adquirida, tienes dos opciones:</p>
                 <ul class="clli list-outside md:list-disc lg:ml-20 mt-4 lg:mt-6 text-justify">
 
                     <li>
-                        <p class="textli">OPCIÓN 1: Solicitar la misma prenda en una talla distinta (sujeto a
+                        <p class="textli scrollflow -slide-top -opacity">OPCIÓN 1: Solicitar la misma prenda en una talla distinta (sujeto a
                             disponibilidad).</p>
                     </li>
                     <li>
-                        <p class="textli">OPCIÓN 2: Solicitar una prenda distinta del mismo costo.</p>
+                        <p class="textli scrollflow -slide-top -opacity">OPCIÓN 2: Solicitar una prenda distinta del mismo costo.</p>
                     </li>
                 </ul>
-                <p class="text-justify textli">En caso de solicitar cambio de prenda, ésta deberá ser devuelta dentro de
+                <p class="text-justify textli scrollflow -slide-top -opacity">En caso de solicitar cambio de prenda, ésta deberá ser devuelta dentro de
                     los 5 primeros días desde la fecha en que la prenda fue recibida. <br><br>
                     La prenda debe estar en su estado original: sin haber sido usada, lavada, manchada o dañada, caso
                     contrario nos reservamos el derecho de no aceptar el cambio.<br><br>
@@ -53,23 +53,23 @@
             <hr class="mt-10 mb-10 hrgreen">
             <div>
                 <div class="flex">
-                    <img src="{{ asset('images/cambiosydevoluciones/box.png') }}" alt="" class="h-9">
-                    <h1 class="ml-4 titlecambio">Ventas al por mayor</h1>
+                    <img src="{{ asset('images/cambiosydevoluciones/box.png') }}" alt="" class="h-9 scrollflow -slide-right -opacity">
+                    <h1 class="ml-4 titlecambio scrollflow -slide-right -opacity">Ventas al por mayor</h1>
                 </div>
-                <p class="text-justify textli">¿Deseas ofrecer nuestra colección a tus clientes y público fidelizado? ¿Tienes Boutique en Provincia o en el extranjero? Comunícate con nosotros!!! <br><br>
+                <p class="text-justify textli scrollflow -slide-top -opacity">¿Deseas ofrecer nuestra colección a tus clientes y público fidelizado? ¿Tienes Boutique en Provincia o en el extranjero? Comunícate con nosotros!!! <br><br>
                     Contamos con un sistema exclusivo para que te conviertas en distribuidor de nuestra marca, hagas crecer tu negocio y nos ayudes a expandir nuestra presencia física. Los requisitos son:</p>
                 <div class="lg:grid lg:grid-cols-2">
                     
                     <div>
                         <ul class="clli list-outside md:list-disc lg:ml-20 mt-4 lg:mt-6 text-justify">
                             <li>
-                                <p class="textli">Tener boutique/tienda física de prendas femeninas o mixtas (damas y caballeros)</p>
+                                <p class="textli scrollflow -slide-top -opacity">Tener boutique/tienda física de prendas femeninas o mixtas (damas y caballeros)</p>
                             </li>
                             <li>
-                                <p class="textli">Contar con RUC válido y activo.</p>
+                                <p class="textli scrollflow -slide-top -opacity">Contar con RUC válido y activo.</p>
                             </li>
                             <li>
-                                <p class="textli">Está ubicado en provincias o en el exterior (Fuera de Perú)</p>
+                                <p class="textli scrollflow -slide-top -opacity">Está ubicado en provincias o en el exterior (Fuera de Perú)</p>
                             </li>
 
                         </ul>
@@ -77,13 +77,13 @@
                     <div>
                         <ul class="clli list-outside md:list-disc lg:ml-20 mt-4 lg:mt-6 text-justify overflow-hidden">
                             <li>
-                                <p class="textli">Si cumples con los requisitos y deseas aperturar una cuenta completa el formulario AQUÍ o haciendo click al siguiente enlace: https://greenmodaperu.com/contactanos</p>
+                                <p class="textli scrollflow -slide-top -opacity">Si cumples con los requisitos y deseas aperturar una cuenta completa el formulario AQUÍ o haciendo click al siguiente enlace: https://greenmodaperu.com/contactanos</p>
                             </li>
                             <li>
-                                <p class="textli">Tu información será revisada y nos pondremos en contacto contigo a la brevedad.</p>
+                                <p class="textli scrollflow -slide-top -opacity">Tu información será revisada y nos pondremos en contacto contigo a la brevedad.</p>
                             </li>
                             <li>
-                                <p class="textli">Si tienes alguna consulta no dudes en llamarnos al Cel. 954149228.</p>
+                                <p class="textli scrollflow -slide-top -opacity">Si tienes alguna consulta no dudes en llamarnos al Cel. 954149228.</p>
                             </li>
                         </ul>
                     </div>
