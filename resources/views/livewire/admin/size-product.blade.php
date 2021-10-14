@@ -21,7 +21,7 @@
         @foreach ($sizes as $size)
             <li class="bg-white shadow-lg rounded-lg p-6" wire:key="size-{{ $size->id }}">
                 <div class="flex items-center">
-                    <span class="text-xl font-medium">{{ $size->name }}</span>
+                    <span class="text-xl capitalize font-medium">{{ $size->name }}</span>
                     <div class="ml-auto">
                         <x-jet-button wire:click="edit({{ $size->id }})" wire:loading.attr="disabled"
                             wire:target="edit({{ $size->id }})">

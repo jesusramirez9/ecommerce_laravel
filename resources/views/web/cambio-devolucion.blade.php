@@ -25,6 +25,7 @@
                 devolución. <br><br>
 
                 Los gastos de envío asociados son asumidos por nosotros.</p>
+                <hr class="mt-10 mb-10 hrgreen">
 
             <div class=" mt-10">
                 <div class="flex">

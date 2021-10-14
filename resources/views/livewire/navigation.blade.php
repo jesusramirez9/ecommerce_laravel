@@ -20,7 +20,7 @@
                 </li>
                 <li class="h-opcs-li2 list-group-item nav-item-2">
                     <a href="/categories/moda"
-                        class="blog_nzv space_link  {{ request()->is('categories/moda') ? 'active' : '' }}">Catalogo</a>
+                        class="blog_nzv space_link  {{ request()->is('categories/moda') ? 'active' : '' }}">Catálogo</a>
 
                 </li>
                 <li class="h-opcs-li3 list-group-item nav-item-2">

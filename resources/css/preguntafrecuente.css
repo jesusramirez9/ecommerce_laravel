@@ -12,6 +12,9 @@
     font-weight: bold;
    
 }
+.brdcordion{
+    border: 2px solid #02776e; 
+}
 
 .accordion{
     border: 2px solid #02776e;

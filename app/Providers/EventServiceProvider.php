@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Product;
+use App\Models\User;
 use App\Observers\ProductObserver;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
@@ -23,6 +24,7 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
+    
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
@@ -34,6 +36,7 @@ class EventServiceProvider extends ServiceProvider
             "App\listeners\MergeTheCartLogout"
         ],
     ];
+    
 
     /**
      * Register any events for your application.
@@ -42,6 +45,7 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
         Product::observe(ProductObserver::class);
     }
 }

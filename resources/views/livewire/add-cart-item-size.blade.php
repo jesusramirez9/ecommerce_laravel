@@ -9,7 +9,7 @@
 
                 <div class="btn-group" role="group">
                     <input type="radio" class="btn-check" value="{{ $size->id }}" name="size" id="{{ $size->name }}"
-                        autocomplete="off" >
+                        autocomplete="off"  >
                     <label class="btn btn-outline-primary mr-3 btn_talla" for="{{ $size->name }}"
                         >{{ $size->name }}</label>
                 </div>
@@ -43,15 +43,16 @@
                 </div>
 
             @endforeach --}}
-            @forelse ($colors as $color)    
+            @forelse ($colors as $key=>$color)    
             <div class="btn-group" role="group">
                 <input type="radio" class="btn-check" value="{{ $color->id }}" name="color" id="{{ __($color->name) }}"
-                    autocomplete="off" >
+                    autocomplete="off" {{$key==0 ? 'checked ' : ''}} >
                 <label class="btn btn-outline-primary mr-3 btn_talla btn_color" for="{{ __($color->name) }}"
                   style="background-color: {{ $color->name }}"  ></label>
             </div>
             @empty
                 <p class="text-sm">Elige una talla para elegir un color</p>
+                
             @endforelse
 
             {{-- <span><a class="ml-4 underline font-bold cursor-pointer colorbrown">Tabla de tallas</a></span> --}}

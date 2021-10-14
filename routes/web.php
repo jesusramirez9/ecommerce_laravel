@@ -35,7 +35,7 @@ Route::get('search', SearchController::class)->name('search');
 
 Route::get('shopping-cart', ShoppingCart::class)->name('shopping-cart');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
 
@@ -91,6 +91,10 @@ Route::get('blog-detalle', function () {
     return view('web.blog-detalle');
 })->name('blogdetalle');
 
+Route::get('pruebas', function () {
+    return view('web.prueba');
+});
+
 Route::get('contactanos',[ContactoController::class, 'index'])->name('contacto');
 
 Route::post('contactanos',[ContactoController::class, 'store'])->name('contacto.store');
@@ -98,6 +102,6 @@ Route::post('contactanos',[ContactoController::class, 'store'])->name('contacto.
 
 
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+// Route::middleware([' ', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');

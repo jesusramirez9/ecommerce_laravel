@@ -144,11 +144,11 @@
              </div>
              <div>
                  <div class="bg-greend text-center py-4">
-                     <p class=" text-2xl md:text-3xl font-bold leading-tight scrollflow -slide-top -opacity">Noche </p>
+                     <p class=" text-2xl md:text-3xl font-bold leading-tight scrollflow -slide-top -opacity">Envíos al extranjero </p>
                      <p class=" text-2xl md:text-xl font-semibold scrollflow -slide-top -opacity">(7 am - 10 pm) </p>
                  </div>
                  <div class="mt-4 bg-bord-greend">
-                     <p class="py-6 px-4 txt-lasted txt-last1 font-bold text-justify scrollflow -slide-top -opacity">
+                     <p class="py-6 px-4 md:p txt-lasted txt-last1 font-bold text-justify scrollflow -slide-top -opacity">
                          Para estos envíos favor de escribirnos al correo comercial@greenmodaperu.com para hacer las
                          coordinaciones respectivas, usamos DHL courier para envios hacia todos los países de América
                          Latina, Norte America y Europa previa coordinacion, favor de considerar que no están incluidos
