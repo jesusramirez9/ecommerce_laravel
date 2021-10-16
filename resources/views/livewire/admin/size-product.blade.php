@@ -33,10 +33,10 @@
 
                     </div>
                 </div>
-            </li>
+           
             
             @livewire('admin.color-size', ['size' => $size], key('color-size' . $size->id))
-
+        </li>
 
         @endforeach
     </ul>

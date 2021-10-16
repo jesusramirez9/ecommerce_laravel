@@ -43,12 +43,12 @@
                 </div>
 
             @endforeach --}}
-            @forelse ($colors as $key=>$color)    
+            @forelse ($colors as $color)    
             <div class="btn-group" role="group">
                 <input type="radio" class="btn-check" value="{{ $color->id }}" name="color" id="{{ __($color->name) }}"
-                    autocomplete="off" {{$key==0 ? 'checked ' : ''}} >
+                    autocomplete="off" >
                 <label class="btn btn-outline-primary mr-3 btn_talla btn_color" for="{{ __($color->name) }}"
-                  style="background-color: {{ $color->name }}"  ></label>
+                  style="background-color: {{ $color->name }}" ></label>
             </div>
             @empty
                 <p class="text-sm">Elige una talla para elegir un color</p>

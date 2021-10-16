@@ -297,8 +297,7 @@
                 })
 
             })
-
-            Livewire.on('deleteColorSize', pivot => {
+            Livewire.on('deleteColorSize', (pivot) => {
                 Swal.fire({
                     title: 'Estas seguro?',
                     text: "¡No podrás revertir esto!.",
@@ -321,6 +320,8 @@
                 })
 
             })
+         
+            
         </script>
     @endpush
 </div>

@@ -86,6 +86,11 @@ class ColorSize extends Component
         $this->size = $this->size->fresh();
     }
 
+    // public function destroy(Pivot $pivot){
+    //     $pivot->delete();
+    //     $this->size = $this->size->fresh();
+    // }
+
     public function render()
     {
 

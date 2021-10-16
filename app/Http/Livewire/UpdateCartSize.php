@@ -16,7 +16,7 @@ class UpdateCartSize extends Component
         $this->qty = $item->qty;
 
         $color = Color::where('name', $item->options->color)->first();
-        $size = Size::where('name', $item->options->size)->first();
+        $size = Size::where([['name', $item->options->size],['product_id',$item->id]])->first();
 
         $this->quantity = qty_available($item->id, $color->id, $size->id);
     }
