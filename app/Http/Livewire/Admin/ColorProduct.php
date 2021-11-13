@@ -77,10 +77,10 @@ class ColorProduct extends Component
         $this->open = false;
     }
 
-    // public function delete(Pivot $pivot){
-    //     $pivot->delete();
-    //     $this->product = $this->product->fresh();
-    // }
+    public function delete(Pivot $pivot){
+        $pivot->delete();
+        $this->product = $this->product->fresh();
+    }
 
     public function render()
     {

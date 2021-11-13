@@ -54,9 +54,11 @@
                 <div class="accordion-container">
                     <a class="accordion-titulo open">Colores<span class="toggle-icon"></span></a>
                     <div class="accordion-content block">
-                        <ul class="divide-y divide-gray-200">
+
+                        <ul class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 ">
                             @foreach ($colors_product as $coloritem)
-                                <li class="py-2 text-sm rronmaa font-semibold">
+                                <li class=" py-2 text-sm rronmaa font-semibold">
+                                    
                                     <a class="cursor-pointer  hover:text-orange-500 capitalize {{ $color == $coloritem->id ? 'text-orange-500 font-semibold' : '' }} "
                                         wire:click="$set('color','{{ $coloritem->id }}')">
                                         
@@ -205,11 +207,17 @@
                         <div class="accordion-container">
                             <a class="accordion-titulo open">Colores<span class="toggle-icon"></span></a>
                             <div class="accordion-content block">
-                                <ul class="divide-y divide-gray-200">
+                                <ul class="grid grid-cols-6 md:grid-cols-4 lg:grid-cols-4 gap-2 ">
                                     @foreach ($colors_product as $coloritem)
-                                        <li class="py-2 text-sm rronmaa font-semibold">
+                                        <li class=" py-2 text-sm rronmaa font-semibold">
+                                            
                                             <a class="cursor-pointer  hover:text-orange-500 capitalize {{ $color == $coloritem->id ? 'text-orange-500 font-semibold' : '' }} "
-                                                wire:click="$set('color','{{ $coloritem->id }}')">{{ __($coloritem->name) }}</a>
+                                                wire:click="$set('color','{{ $coloritem->id }}')">
+                                                
+                                                <span class="ml-2 text-gray-700 capitalize bg_clds" style="background-color:{{$coloritem->name}} ">
+                                    
+                                                </span>
+                                            </a>
                                         </li>
                                     @endforeach
                                 </ul>

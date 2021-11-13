@@ -21,7 +21,9 @@
 
             <div>
                 <x-jet-label value="Teléfono de contacto"  class="colorverderr font-bold" />
-                <x-jet-input type="text"
+                <x-jet-input type="text" 
+                            maxlength="9"
+                            oninput="maxlengthNumber(this);"
                             wire:model.defer="phone"
                             placeholder="Ingrese un número de telefono de contácto"
                             class="w-full"/>
@@ -204,4 +206,13 @@
             </div>
         </div>
     </div>
+    @push('script')
+        <script>
+            function maxlengthNumber (obj){
+                if (obj.value.length > obj.maxLength) {
+                    obj.value = obj.value.slice(0, obj.maxLength);
+                }
+            }
+        </script>
+    @endpush
 </div>

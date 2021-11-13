@@ -3,9 +3,7 @@
         <p class="sizecol mb-4">Elige tu talla:  </p>
         <div wire:model="size_id" class="divsize">
             @foreach ($sizes as $size)
-                {{-- <input type="radio" name="size" id="{{ $size->name }}" value="{{ $size->id }}" />
-                <label for="{{ $size->name }}">{{ $size->name }} </label> --}}
-              
+               
 
                 <div class="btn-group" role="group">
                     <input type="radio" class="btn-check" value="{{ $size->id }}" name="size" id="{{ $size->name }}"
@@ -17,13 +15,7 @@
             @endforeach
         </div>
         
-        {{-- <select wire:model="size_id"
-            class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-            <option value="" selected disabled>Seleccione una talla</option>
-            @foreach ($sizes as $size)
-                <option value="{{ $size->id }}">{{ $size->name }}</option>
-            @endforeach
-        </select> --}}
+    
 
     </div>
 
@@ -43,13 +35,16 @@
                 </div>
 
             @endforeach --}}
+            
             @forelse ($colors as $color)    
+
             <div class="btn-group" role="group">
                 <input type="radio" class="btn-check" value="{{ $color->id }}" name="color" id="{{ __($color->name) }}"
                     autocomplete="off" >
                 <label class="btn btn-outline-primary mr-3 btn_talla btn_color" for="{{ __($color->name) }}"
                   style="background-color: {{ $color->name }}" ></label>
             </div>
+            
             @empty
                 <p class="text-sm">Elige una talla para elegir un color</p>
                 

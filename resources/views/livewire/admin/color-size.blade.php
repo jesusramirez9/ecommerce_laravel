@@ -98,9 +98,13 @@
                 <select
                     class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                     wire:model="pivot_color_id">
-                    <option value="" disabled>Seleccione un color</option>
+                    <option value="{{ $color->id }}" disabled>Seleccione un color</option>
                     @foreach ($colors as $color)
-                        <option value="{{ $color->id }}">{{ ucfirst(__($color->name)) }}</option>
+                        <option value="{{ $color->id }}"  style="background-color:{{ $color->name }}" >
+                            
+                            
+                            
+                        </option>
                     @endforeach
                 </select>
             </div>
